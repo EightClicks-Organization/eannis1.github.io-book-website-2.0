@@ -1,5 +1,4 @@
 import { useState } from "react";
-import noVideo from "../assets/pexels-alleksana-4271927.jpg"
 import "./Step_Bible.css"
 
 function VideoEmbed({videoId, title}) {
@@ -95,7 +94,7 @@ const steps = [
 export function Step_Bible() {
     return (
             <SplitView
-                src={"https://www.stepbible.org/"}
+                src={"https://www.stepbible.org/?q=version=ESV&skipwelcome"}
                 title={"STEP BIBLE"}
                 direction="row"
                 steps={steps}
