@@ -19,6 +19,15 @@ body a {
   color: black;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 /* Responsive navigation bar with dropdown modified from 
 https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp*/
 

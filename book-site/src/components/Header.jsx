@@ -1,42 +1,44 @@
+import { NavLink } from "react-router-dom";
+import logo from '../assets/Logo_V1.png'
+
 
 export function Header() {
   return (
     <header>
         <nav>
             <a id="top"></a>
-            <div class="topnav" id="myTopnav">
-                <div class="logo">
-                    <img src="images/Logo_V1.png"/>
+            <div className="topnav" id="myTopnav">
+                <div className="logo">
+                    <img src={logo}/>
                 </div>
 
-                <a href="index.html" class="active" src="images/Logo_V1.png">Home</a>
-                <a href="podcast.html">Podcast</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Instructional Videos
-                        <i class="fa fa-caret-down"></i>
+                <NavLink to={"/"} src={logo}>Home</NavLink>
+                <NavLink to={"/podcast"} >Podcast</NavLink>
+                <div className="dropdown">
+                    <button className="dropbtn">
+                        Instructional Videos
+                        <i className="fa fa-caret-down"></i>
                     </button>
-                    <div class="dropdown-content">
-                        <a href="study_topics_hebrew.html">Hebrew</a>
-                        <a href="study_topics_greek.html">Greek</a>
-                        <a href="study_topics_latin.html">Latin</a>
-                        <a href="step_bible.html">Step Bible</a>
-                        <a href="bible_hub.html">Bible Hub</a>
-                        <a href="tlg.html">TLG</a>
-                        <a href="perseus_digital_library">Perseus Digital Library</a>
+                    <div className="dropdown-content">
+                        <NavLink to={"/hebrew"} >Hebrew</NavLink>
+                        <NavLink to={"/greek"} >Greek</NavLink>
+                        <NavLink to={"/latin"} >Latin</NavLink>
+                        <NavLink to={"/step_bible"} >Step Bible</NavLink>
+                        <NavLink to={"/bible_hub"} >Bible Hub</NavLink>
+                        <NavLink to={"/tlg"} >TLG</NavLink>
+                        <NavLink to={"/perseus_digital_library"} >Perseus Digital Library</NavLink>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="dropbtn">About
-                        <i class="fa fa-caret-down"></i>
+                <div className="dropdown">
+                    <button className="dropbtn">About
+                        <i className="fa fa-caret-down"></i>
                     </button>
-                    <div class="dropdown-content">
-                        <a href="about_authors.html">Authors</a>
-                        <a href="about_book.html">Book</a>
+                    <div className="dropdown-content">
+                        <NavLink to={"/about_authors"} >Authors</NavLink>
+                        <NavLink to={"/about_book"} >Book</NavLink>
                     </div>
                 </div>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
             </div>
-            <script src="JavaScript/myJavaScript.js"></script>
         </nav>
     </header>
 
