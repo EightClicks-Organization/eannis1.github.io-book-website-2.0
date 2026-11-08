@@ -14,8 +14,45 @@
 }
 
 .split-frame {
-  flex: 2;            /* frame gets twice the space */
+  flex: 1.5;            /* frame gets twice the space */
   border: 0;
   min-width: 0;
   min-height: 0;
 }
+
+.youtube-frame {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.step-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.step-nav button {
+  padding: 0.6em 1.4em;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid #2a4158;
+  background-color: #2a4158;
+  color: white;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.step-nav button:hover:not(:disabled) {
+  background-color: #afc8e0;
+  color: #2a4158;
+}
+
+.step-nav button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
