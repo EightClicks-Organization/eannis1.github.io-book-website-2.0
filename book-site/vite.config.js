@@ -4,5 +4,5 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/test-repo/'
+  base: '/eannis1.github.io-book-website-2.0/app/'
 })

@@ -11,14 +11,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm run build
+          cache: npm
+          cache-dependency-path: book-site/package-lock.json
+
+      - name: Build React app
+        working-directory: book-site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          rsync -av \
+            --exclude='.git' --exclude='.github' \
+            --exclude='book-site' --exclude='_site' \
+            ./ _site/
+          mkdir -p _site/app
+          cp -r book-site/dist/. _site/app/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist   # use "build" for Create React App
+          path: _site
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
