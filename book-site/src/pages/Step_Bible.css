@@ -26,7 +26,7 @@
 .divider-grip {
   width: 4px;
   height: 40px;
-  border-radius 2px;
+  border-radius: 2px;
   background: radial-gradient(circle, #9aa3b0 1.5px, transparent 2px) center / 4px 8px repeat-y;
   pointer-events: none;
 }
